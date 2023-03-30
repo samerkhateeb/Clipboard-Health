@@ -48,10 +48,6 @@ export const postShift = async (
 
     await _new.save();
 
-    // await Shifts.create(newShift);
-
-    // Shifts.find({}).populate("facility").exec();
-
     return res.status(200).json(_new);
   } catch (error) {
     return res.status(404).json({ error: "Error while inserting the data" });

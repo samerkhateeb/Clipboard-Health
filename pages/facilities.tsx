@@ -2,11 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { BiUserPlus, BiX } from "react-icons/bi";
 import Head from "next/head";
-import {
-  toggleChangeAction,
-  changeFacilityID,
-  deleteFacility,
-} from "@/redux/Facility/facilitySlice";
+import { toggleChangeAction } from "@/redux/Facility/facilitySlice";
 import Facility_New from "@/components/Facilities/Facility_New";
 import Facilities from "@/components/Facilities/Facilities";
 

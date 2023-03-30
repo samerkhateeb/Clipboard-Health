@@ -1,20 +1,9 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
-import {
-  deleteAgents,
-  getAgents,
-  postAgents,
-  putAgents,
-} from "@/controllers/agents";
 
 import { IResponse } from "@/interfaces/IResponse";
 import connectMongo from "@/database/connectMongo";
-import {
-  deleteFacility,
-  getFacilities,
-  postFacilities,
-  putFacility,
-} from "@/controllers/facilities";
+import { getFacilities, postFacilities } from "@/controllers/facilities";
 
 export default async function handler(
   req: NextApiRequest,

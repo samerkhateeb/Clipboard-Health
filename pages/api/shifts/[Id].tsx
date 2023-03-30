@@ -4,12 +4,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import { IResponse } from "@/interfaces/IResponse";
 import connectMongo from "@/database/connectMongo";
 
-import {
-  deleteShift,
-  getShiftsByFacility,
-  postShift,
-  putShift,
-} from "@/controllers/shifts";
+import { deleteShift, getShifts, putShift } from "@/controllers/shifts";
 
 export default async function handler(
   req: NextApiRequest,
@@ -21,7 +16,7 @@ export default async function handler(
 
   const { method } = req;
 
-  if (method == "GET") getShiftsByFacility(req, res);
+  if (method == "GET") getShifts(req, res);
   else if (method == "PUT") putShift(req, res);
   else if (method == "DELETE") deleteShift(req, res);
   else {

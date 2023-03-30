@@ -1,5 +1,3 @@
-import IFacility from "./IFacility";
-
 export default interface IShift {
   _id: string;
   name: String;
