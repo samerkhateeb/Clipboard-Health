@@ -38,10 +38,6 @@ export const postAgents = async (
 
     const facility = await Facilities.findById({ _id: newAgent.facility });
     const shifts = await Shifts.findById({ _id: newAgent.shifts });
-    // const shifts = await Shifts.find({}).populate({
-    //   path: "facility",
-    //   match: { id: facility._id },
-    // });
 
     const _new = new Agents({
       name: newAgent.name,
@@ -56,7 +52,6 @@ export const postAgents = async (
 
     await _new.save();
 
-    // await Agents.create(newAgent);
     return res.status(200).json(newAgent);
   } catch (error) {
     return res.status(404).json({ error: "Error while inserting the data" });
