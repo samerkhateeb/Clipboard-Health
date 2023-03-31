@@ -30,8 +30,5 @@ http://localhost:3000/generatereport
 <img width="1623" alt="Screenshot 2023-03-30 at 13 29 40" src="https://user-images.githubusercontent.com/55295850/229163431-52996766-ce72-47cd-92f0-e2eb106f2e60.png">
 
 
-Facilities Page: image
-
-Shifts Page: image
 
 🎉 It Worked For You Now, Thanks!
