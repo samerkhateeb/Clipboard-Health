@@ -36,13 +36,8 @@ export const postAgents = async (
     if (Object.keys(newAgent).length == 0)
       return res.status(404).json({ error: "Form Data Provided .." });
 
-    console.log("newAgent1=>", newAgent);
-    console.log("newAgent.facility=>", newAgent.facility);
-    console.log("newAgent.shifts=>", newAgent.shifts);
     const facility = await Facilities.findById({ _id: newAgent.facility });
-    console.log("facility->", facility);
     const shifts = await Shifts.findById({ _id: newAgent.shifts });
-    console.log("shifts->", shifts);
     // const shifts = await Shifts.find({}).populate({
     //   path: "facility",
     //   match: { id: facility._id },
@@ -59,14 +54,11 @@ export const postAgents = async (
       shifts: shifts,
     });
 
-    console.log("_new///", _new);
-
     await _new.save();
 
     // await Agents.create(newAgent);
     return res.status(200).json(newAgent);
   } catch (error) {
-    console.log("error in Catch-=>", error);
     return res.status(404).json({ error: "Error while inserting the data" });
   }
 };
@@ -87,7 +79,6 @@ export const putAgents = async (
 
     return res.status(404).json({ error: "Form Data Not Provided .." });
   } catch (error) {
-    console.log("error in Catch-=>", error);
     return res.status(404).json({ error: "Error while Updating the data" });
   }
 };
@@ -108,7 +99,6 @@ export const deleteAgents = async (
 
     return res.status(404).json({ error: "Query Is Not Provided .." });
   } catch (error) {
-    console.log("error in Catch-=>", error);
     return res.status(404).json({ error: "Error while Deleting the data" });
   }
 };

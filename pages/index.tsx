@@ -24,7 +24,6 @@ export default function Home() {
 
   const deleteMutation = useMutation(() => deleteAgent(deleteId), {
     onSuccess: async () => {
-      // console.log("deleted successfully");
       queryClient.prefetchQuery("agents", getAgents);
       await dispatch(rDeleteAgent(null));
     },

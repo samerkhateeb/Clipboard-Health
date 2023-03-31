@@ -80,14 +80,12 @@ const Tr = ({
   const openToggleHandler = (e: any) => {
     if (!visible) {
       dispatch(rToggleChangeAction(_id));
-      // console.log("_id in Table->", _id);
     }
     dispatch(rChangeEmpID(_id));
   };
 
   // const deleteMutation = useMutation(() => deleteAgent(_id), {
   //   onSuccess: async (data) => {
-  //     // console.log("deleted successfully");
   //     queryClient.prefetchQuery("agents", getAgents);
   //   },
   // });

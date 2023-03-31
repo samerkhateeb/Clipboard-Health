@@ -25,16 +25,12 @@ export const addAgent = async (formData: any) => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
     };
-    console.log("formData=>", formData);
 
     const response = await fetch(`${BASE_URI}/agents`, options);
     const json = await response.json();
 
-    console.log("json=>", json);
-
     return json.response as IAgent;
   } catch (error) {
-    console.log("error->", error);
     return error;
   }
 };

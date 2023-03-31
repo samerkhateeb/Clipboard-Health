@@ -11,7 +11,6 @@ export const getFacilities = async (
     const { Id } = req.query;
 
     let facilities: any = {};
-    console.log("Id=>..getFacilities", Id);
 
     if (Id) facilities = await Facilities.findById(Id);
     else facilities = await Facilities.find({});
@@ -37,7 +36,6 @@ export const postFacilities = async (
     await Facilities.create(newFacility);
     return res.status(200).json(newFacility);
   } catch (error) {
-    console.log("error in Catch-=>", error);
     return res.status(404).json({ error: "Error while inserting the data" });
   }
 };
@@ -58,7 +56,6 @@ export const putFacility = async (
 
     return res.status(404).json({ error: "Form Data Not Provided .." });
   } catch (error) {
-    console.log("error in Catch-=>", error);
     return res.status(404).json({ error: "Error while Updating the data" });
   }
 };
@@ -79,7 +76,6 @@ export const deleteFacility = async (
 
     return res.status(404).json({ error: "Query Is Not Provided .." });
   } catch (error) {
-    console.log("error in Catch-=>", error);
     return res.status(404).json({ error: "Error while Deleting the data" });
   }
 };

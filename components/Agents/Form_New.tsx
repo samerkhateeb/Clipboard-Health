@@ -19,8 +19,6 @@ import Message from "./_child/Message";
 // };
 
 const Form_New: React.FC<IProps> = ({ formData, setFormData }) => {
-  // const [formData, setFormData] = useReducer(formReducer, {});
-
   const queryClient = useQueryClient();
 
   const handleSubmit = (e: any) => {
@@ -43,7 +41,6 @@ const Form_New: React.FC<IProps> = ({ formData, setFormData }) => {
       shifts: shift,
     };
 
-    console.log(_data);
     addMutation.mutate(_data);
   };
 

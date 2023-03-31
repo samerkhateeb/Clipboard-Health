@@ -21,7 +21,6 @@ const Form_Update: React.FC<IProps> = ({ _id, formData, setFormData }) => {
     (newFormData) => updateAgent(_id!, newFormData),
     {
       onSuccess: async (data) => {
-        console.log("data updated");
         queryClient.prefetchQuery("agents", getAgents);
         dispatch(rToggleChangeAction(_id));
       },
@@ -40,8 +39,6 @@ const Form_Update: React.FC<IProps> = ({ _id, formData, setFormData }) => {
     // data.name => formData.name
     let newFormData = Object.assign({}, data, formData, { name: empName });
 
-    console.log(newFormData);
-
     await UpdateMutation.mutate(newFormData);
   };
 
@@ -53,7 +50,6 @@ const Form_Update: React.FC<IProps> = ({ _id, formData, setFormData }) => {
 
   return (
     <>
-      {/* {console.log("Object.keys(formData).length", Object.keys(formData))} */}
       {Object.keys(formData).length != 0 && (
         <Message type="success">Successfully Added!!</Message>
       )}

@@ -21,7 +21,6 @@ const Shift_New: React.FC<IProps> = () => {
   const handleSubmit = (e: any) => {
     e.preventDefault();
     if (Object.keys(formData).length == 0) return console.log("No form Data");
-    console.log(formData);
     let { name, from, to, quarter, facility } = formData;
 
     // const {
@@ -34,7 +33,6 @@ const Shift_New: React.FC<IProps> = () => {
     // });
 
     // if (!isLoading) {
-    // console.log("facilities_data =>", facilities_data);
     const _data = {
       name,
       from,
